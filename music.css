@@ -1,24 +1,28 @@
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
   background-color: rebeccapurple;
+  font-family: sans-serif;
 }
+
 h1 {
   color: rgb(247, 244, 242);
   text-align: center;
+  margin-top: 2rem;
 }
+
 .piano-container {
   border: 2px solid white;
   display: flex;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
+  position: relative;
+  margin: 4rem auto;
+  width: fit-content;
   padding: 4em 1em 1em 1em;
   border-radius: 0.62rem;
   background-color: black;
   box-shadow: 0 2em 4em rgba(7, 0, 53, 0.25);
 }
+
 .white-key {
   width: 4.37rem;
   height: 17.5rem;
@@ -27,56 +31,43 @@ h1 {
   border: 2px solid #24272e;
   box-sizing: border-box;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
+
 .white-key:hover {
   background-color: #ebebeb;
 }
+
 .black-key {
   width: 2.5em;
   height: 10em;
-  border-radius: 0 0 0.3em 0.3em;
-  box-sizing: border-box;
   position: absolute;
   background-color: #070a0f;
+  border-radius: 0 0 0.3em 0.3em;
   cursor: pointer;
+  z-index: 2;
 }
+
+/* Position each black key precisely */
+.black-key[data-note="2"] { left: 3.5rem; }
+.black-key[data-note="4"] { left: 8.25rem; }
+.black-key[data-note="6"] { left: 13rem; }
+.black-key[data-note="9"] { left: 21.8rem; }
+.black-key[data-note="11"] { left: 26.5rem; }
+.black-key[data-note="14"] { left: 35.2rem; }
+.black-key[data-note="16"] { left: 40rem; }
+.black-key[data-note="18"] { left: 44.7rem; }
+.black-key[data-note="21"] { left: 53.5rem; }
+.black-key[data-note="23"] { left: 58.2rem; }
+
 .black-key:hover {
   background-color: #24272e;
 }
-.black-key:nth-child(1) {
-  left: 4em;
-}
-.black-key:nth-child(2) {
-  left: 8.37em;
-}
-.black-key:nth-child(3) {
-  left: 17.12em;
-}
-.black-key:nth-child(4) {
-  left: 21.5em;
-}
-.black-key:nth-child(5) {
-  left: 25.87em;
-}
-.black-key:nth-child(6) {
-  left: 34.62em;
-}
-.black-key:nth-child(7) {
-  left: 39em;
-}
-.black-key:nth-child(8) {
-  left: 47.75em;
-}
-.black-key:nth-child(9) {
-  left: 52.12em;
-}
-.black-key:nth-child(10) {
-  left: 56.5em;
-}
+
 .footer-content {
   text-align: center;
-  margin-top: 3rem;
-  padding-top: 350px;
+  padding-top: 4rem;
   font-size: 1.3rem;
   color: #f0f0f0;
 }
@@ -86,21 +77,15 @@ h1 {
     font-size: 0.7em;
   }
 }
+
 @media screen and (max-width: 700px) {
   .piano-container {
     font-size: 0.5em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .piano-container {
     font-size: 0.3em;
-  }
-}
-@media (max-width: 600px) {
-  .piano {
-    padding: 5px;
-  }
-  .key.white {
-    aspect-ratio: 3 / 12;
   }
 }
